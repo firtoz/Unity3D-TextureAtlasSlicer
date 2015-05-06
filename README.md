@@ -1,6 +1,8 @@
 # Unity3D-TextureAtlasSlicer
 Simple and fast tool to import XML spritesheets (TextureAtlas) into Unity3D!
 
+![Preview Image](https://i.imgur.com/LhmcMjX.png)
+
 Works very well to import [Kenney's sprite assets](http://opengameart.org/users/kenney)!
 
 ## Usage
