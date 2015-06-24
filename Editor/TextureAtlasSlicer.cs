@@ -36,7 +36,7 @@ public class TextureAtlasSlicer : EditorWindow {
     public TextureImporter importer;
 
     public TextureAtlasSlicer() {
-        title = "Texture Atlas Slicer";
+        titleContent = new GUIContent("XML Slicer");
     }
 
 
