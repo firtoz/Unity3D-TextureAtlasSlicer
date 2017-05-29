@@ -30,7 +30,7 @@ public class TextureAtlasSlicer : EditorWindow {
 
         //valid only if the texture type is 'sprite' or 'advanced'.
         return textureImporter && textureImporter.textureType == TextureImporterType.Sprite ||
-               textureImporter.textureType == TextureImporterType.Advanced;
+               textureImporter.textureType == TextureImporterType.Default;
     }
 
     public TextureImporter importer;
@@ -149,12 +149,12 @@ public class TextureAtlasSlicer : EditorWindow {
             EditorGUI.EndDisabledGroup();
 
             if (importer.textureType != TextureImporterType.Sprite &&
-                importer.textureType != TextureImporterType.Advanced) {
+                importer.textureType != TextureImporterType.Default) {
                 EditorGUILayout.LabelField("The Texture Type needs to be Sprite or Advanced!");
             }
 
             EditorGUI.BeginDisabledGroup((importer.textureType != TextureImporterType.Sprite &&
-                                          importer.textureType != TextureImporterType.Advanced));
+                                          importer.textureType != TextureImporterType.Default));
             {
                 EditorGUI.BeginChangeCheck();
                 xmlAsset = EditorGUILayout.ObjectField("XML Source", xmlAsset, typeof (TextAsset), false) as TextAsset;
