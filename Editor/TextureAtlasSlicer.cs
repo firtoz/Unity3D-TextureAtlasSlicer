@@ -165,7 +165,7 @@ public class TextureAtlasSlicer : EditorWindow {
                 spriteAlignment = (SpriteAlignment) EditorGUILayout.EnumPopup("Pivot", spriteAlignment);
 
                 EditorGUI.BeginDisabledGroup(spriteAlignment != SpriteAlignment.Custom);
-                EditorGUILayout.Vector2Field("Custom Offset", customOffset);
+                customOffset = EditorGUILayout.Vector2Field("Custom Offset", customOffset);
                 EditorGUI.EndDisabledGroup();
 
                 var needsToResizeTexture = wantedWidth > selectedTexture.width || wantedHeight > selectedTexture.height;
