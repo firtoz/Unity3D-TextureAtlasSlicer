@@ -382,8 +382,6 @@ public class TextureAtlasSlicer : EditorWindow
             return;
         }
 
-        var textureHeight = selectedTexture.height;
-
         var needsUpdate = false;
 
         if (importer.spriteImportMode != SpriteImportMode.Multiple)
@@ -393,14 +391,13 @@ public class TextureAtlasSlicer : EditorWindow
         }
 
         var wantedSpriteSheet = (from subTexture in subTextures
-                                 let actualY = textureHeight - (subTexture.y + subTexture.height)
                                  select new SpriteMetaData
                                  {
                                      alignment = (int)spriteAlignment,
                                      border = new Vector4(),
                                      name = subTexture.name,
                                      pivot = GetPivotValue(spriteAlignment, customOffset),
-                                     rect = new Rect(subTexture.x, actualY, subTexture.width, subTexture.height)
+                                     rect = new Rect(subTexture.x, subTexture.y, subTexture.width, subTexture.height)
                                  }).ToArray();
         if (!needsUpdate && !importer.spritesheet.SequenceEqual(wantedSpriteSheet))
         {
